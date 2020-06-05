@@ -25,11 +25,7 @@ if not os.path.exists(sys.argv[1]):
     sys.exit(1)
 
 if not os.path.exists(sys.argv[1]):
-    print("Output image not found")
-    sys.exit(1)
-
-if not os.path.exists(sys.argv[1]):
-    print("Palette not found")
+    print("Output image path not given")
     sys.exit(1)
 
 #Simple GB palette - https://lospec.com/palette-list/kirokaze-gameboy
@@ -55,7 +51,7 @@ for y in range(0, imgY):
         diff = 256
         min_index = 0
 
-        # Try every color on the palette and try do find the closest color
+        # Try every color on the palette and try to find the closest color
         for index in range(len(palette_rgb)):
             current_diff = math.sqrt(
                 (_r - palette_rgb[index][0])**2 + 
